@@ -1,0 +1,58 @@
+
+  vinext dev  (Vite 8.0.13)
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3000[22m/[39m
+  [32m➜[39m  [1mDebug[22m:   [2m[33mhttp://localhost:[1m3000[22m[2m/__debug[39m[22m
+ GET /design-corridor 500 in 1.3s
+[2m10:27:12[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2mpersonal information/src/features/design-corridor/components/DesignCorridor.tsx[22m
+[vite] program reload
+ GET /design-corridor 200 in 139ms (compile: 1786328647.5s, render: 122ms)
+ GET /design-corridor 200 in 59ms (compile: 1786328647.5s, render: 34ms)
+ GET /[object%20Object] 404 in 22ms
+ GET /design-corridor 200 in 65ms (compile: 1786328647.5s, render: 29ms)
+ GET /[object%20Object] 404 in 18ms
+ GET /[object%20Object] 404 in 11ms
+ GET /?_rsc=yIdIBOckCVVxxE0X 200 in 20ms (compile: 1786328647.5s, render: 0ms)
+ GET /[object%20Object] 404 in 51ms
+ GET /design-corridor 200 in 60ms (compile: 1786328647.5s, render: 39ms)
+ GET /[object%20Object] 404 in 16ms
+ GET /[object%20Object] 404 in 12ms
+ GET /?_rsc=yIdIBOckCVVxxE0X 200 in 1.3s (compile: 1786328648.8s, render: 0ms)
+ GET /?_rsc=yIdIBOckCVVxxE0X 200 in 1.9s (compile: 1786328649.4s, render: 0ms)
+ GET /?_rsc=yIdIBOckCVVxxE0X 200 in 23ms (compile: 1786328647.5s, render: 0ms)
+ GET /?_rsc=yIdIBOckCVVxxE0X 200 in 14ms (compile: 1786328647.5s, render: 0ms)
+ GET /?_rsc=yIdIBOckCVVxxE0X 200 in 16ms (compile: 1786328647.5s, render: 0ms)
+ GET /?_rsc=yIdIBOckCVVxxE0X 200 in 16ms (compile: 1786328647.5s, render: 0ms)
+ GET /[object%20Object] 404 in 91ms
+ GET /[object%20Object] 404 in 11ms
+ GET /[object%20Object] 404 in 16ms
+[2m10:46:29[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/design-corridor.html[22m
+[2m10:48:09[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/design-corridor.html[22m
+[2m11:05:09[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/design-corridor.html[22m
+[2m11:06:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/design-corridor.html[22m
+[2m11:12:48[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/design-corridor.html[22m
+[2m11:47:20[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/design-corridor.html[22m
+[2m11:58:36[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2mpersonal information/src/assets/archive/design/link/xiangcun.png[22m
+[2m11:58:36[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/personal information/src/features/design-corridor/components/DesignCorridor.tsx[22m
+[vite] program reload
+[2m11:58:59[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2mpersonal information/src/assets/archive/design/link/zhonlian.png[22m
+[2m11:58:59[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/personal information/src/features/design-corridor/components/DesignCorridor.tsx[22m
+[2m11:59:20[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2mpersonal information/src/assets/archive/design/link/long.png[22m
+[2m11:59:20[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/personal information/src/features/design-corridor/components/DesignCorridor.tsx[22m
+[2m12:03:36[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/design-corridor.html[22m
+[2m12:11:11[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/design-corridor.html[22m
+[2m12:35:53[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/design-corridor.html[22m
+[2m15:28:27[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/design-corridor.html[22m
+[2m15:44:18[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/design-corridor.html[22m
+[2m16:48:10[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/design-corridor.html[22m
+[2m20:37:24[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/design-corridor.html[22m
+[2m20:43:37[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/design-corridor.html[22m
+[2m22:09:54[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/internship-room.html[22m
+[2m22:09:57[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/personal-archive-new.html[22m
+[2m22:28:25[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/internship-room.html[22m
+[2m23:27:18[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/personal-archive-new.html[22m
+[vite] program reload
+[2m19:58:26[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/personal information/src/features/clue-wall/components/ClueWall.tsx[22m
+[2m21:23:28[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/personal information/src/features/clue-wall/components/ClueWall.tsx[22m
+[2m22:13:48[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mpublic/room/index.html[22m
+[2m22:30:07[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2moutputs/personal-archive-new.html[22m

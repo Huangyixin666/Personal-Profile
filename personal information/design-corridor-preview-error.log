@@ -1,0 +1,174 @@
+Unable to fetch the `Request.cf` object! Falling back to a default placeholder...
+TimeoutError: The operation was aborted due to timeout
+    at new DOMException (node:internal/per_context/domexception:76:18)
+    at Timeout._onTimeout (node:internal/abort_controller:154:9)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+    at C:\Users\86137\Documents\Codex\2026-07-27\x\node_modules\.pnpm\undici@7.24.8\node_modules\undici\index.js:157:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async setupCf (C:\Users\86137\Documents\Codex\2026-07-27\x\node_modules\.pnpm\miniflare@4.20260515.0\node_modules\miniflare\dist\src\index.js:56947:17)
+    at async #assembleConfig (C:\Users\86137\Documents\Codex\2026-07-27\x\node_modules\.pnpm\miniflare@4.20260515.0\node_modules\miniflare\dist\src\index.js:88777:26)
+    at async #assembleAndUpdateConfig (C:\Users\86137\Documents\Codex\2026-07-27\x\node_modules\.pnpm\miniflare@4.20260515.0\node_modules\miniflare\dist\src\index.js:89117:20)
+    at async Mutex.runWith (C:\Users\86137\Documents\Codex\2026-07-27\x\node_modules\.pnpm\miniflare@4.20260515.0\node_modules\miniflare\dist\src\index.js:58160:48)
+[2m10:26:50[22m [31m[1m[vite][22m[39m [31mInternal server error: document is not defined[39m
+      at DesignCorridor (C:/Users/86137/Documents/Codex/2026-07-27/x/personal information/src/features/design-corridor/components/DesignCorridor.tsx:86:14)
+      at Object.react_stack_bottom_frame (C:/Users/86137/Documents/Codex/2026-07-27/x/node_modules/.vite/deps_ssr/react-dom-server.edge.development-4s2X2Spg.js?v=015518bc:5306:11)
+      at renderWithHooks (C:/Users/86137/Documents/Codex/2026-07-27/x/node_modules/.vite/deps_ssr/react-dom-server.edge.development-4s2X2Spg.js?v=015518bc:2792:19)
+      at renderElement (C:/Users/86137/Documents/Codex/2026-07-27/x/node_modules/.vite/deps_ssr/react-dom-server.edge.development-4s2X2Spg.js?v=015518bc:2930:17)
+      at retryNode (C:/Users/86137/Documents/Codex/2026-07-27/x/node_modules/.vite/deps_ssr/react-dom-server.edge.development-4s2X2Spg.js?v=015518bc:3359:285)
+      at renderNodeDestructive (C:/Users/86137/Documents/Codex/2026-07-27/x/node_modules/.vite/deps_ssr/react-dom-server.edge.development-4s2X2Spg.js?v=015518bc:3340:265)
+      at finishFunctionComponent (C:/Users/86137/Documents/Codex/2026-07-27/x/node_modules/.vite/deps_ssr/react-dom-server.edge.development-4s2X2Spg.js?v=015518bc:2808:233)
+      at renderElement (C:/Users/86137/Documents/Codex/2026-07-27/x/node_modules/.vite/deps_ssr/react-dom-server.edge.development-4s2X2Spg.js?v=015518bc:2946:5)
+      at renderElement (C:/Users/86137/Documents/Codex/2026-07-27/x/node_modules/.vite/deps_ssr/react-dom-server.edge.development-4s2X2Spg.js?v=015518bc:3230:7)
+      at retryNode (C:/Users/86137/Documents/Codex/2026-07-27/x/node_modules/.vite/deps_ssr/react-dom-server.edge.development-4s2X2Spg.js?v=015518bc:3359:285)
+Detected multiple renderers concurrently rendering the same context provider. This is currently unsupported.
+Detected multiple renderers concurrently rendering the same context provider. This is currently unsupported.
+[2m10:28:17[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mIn HTML, <button> cannot be a descendant of <button>.
+This will cause a hydration error.
+
+  ...
+    <Children>
+      <RedirectBoundary>
+        <RedirectErrorBoundary>
+          <LayoutSegmentProvider segmentMap={{children:[...]}}>
+            <Slot id="page:/">
+              <AwaitAppRenderDependencies>
+                <Home>
+                  <ArchiveHomePage>
+                    <main ref={{current:null}} className="_viewport_...">
+                      <div className="_scene_y6y..." style={{width:1920, ...}}>
+                        <ArchiveHeader>
+                        <section>
+                        <div>
+                        <div>
+                        <ArchiveFolders>
+                          <PersonalOriginFolder>
+                          <ArchiveFolder>
+                          <ArchiveFolder folder={{id:"graduate", ...}} layout={{x:650,y:430,width:225, ...}} ...>
+                            <article className={"_folderP..."} style={{...}}>
+                              <span>
+>                             <button
+>                               className="_folderButton_10ea0_2"
+>                               type="button"
+>                               tabIndex={0}
+>                               aria-label="打开硕士档案"
+>                               aria-expanded={false}
+>                               onClick={function onToggle}
+>                             >
+                                <span>
+                                <ArchiveFolderContent folder={{id:"graduate", ...}}>
+                                  <div className="_folderCon...">
+                                    <header>
+                                    <dl>
+                                    <StudentCard card={{enabled:true, ...}}>
+>                                     <button
+>                                       className={"_studentCard_10ea0_6 "}
+>                                       type="button"
+>                                       aria-label="查看学生证背面"
+>                                       aria-pressed={false}
+>                                       onClick={function onClick}
+>                                     >
+                                ...
+                        ...
+                      ...
+
+[2m10:28:17[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m<button> cannot contain a nested <button>.
+See this log for the ancestor stack trace.
+[2m10:28:17[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to execute 'contains' on 'Node': parameter 1 is not of type 'Node'.
+[39m > beginClose ../../../../../../personal%20information/src/features/archive-folders/personal-origin/components/PersonalOriginFolder.tsx:59:50
+ > executeDispatch node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:19116:8
+ > runWithFiberInDEV node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:871:29
+ > processDispatchQueue node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:19166:18
+ > node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:19767:8
+ > batchedUpdates$1 node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3255:39
+ > dispatchEventForPluginEventSystem node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:19320:6
+ > dispatchEvent node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:23585:10
+ > dispatchContinuousEvent node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:23570:10
+
+[2m10:28:32[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mA tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <DevRecoveryBoundary resetKey={0} onCatch={function handleDevRecoveryBoundaryCatch}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary>
+          <NavigationCommitSignal renderId={0}>
+            <Slot id="route:/des...">
+              <meta>
+              <title>
+              <meta>
+              <meta>
+              <LayoutSegmentProvider segmentMap={{children:[...]}}>
+                <Slot id="layout:/">
+                  <default>
+                    <link>
+                    <RemoveDuplicateServerCss>
+                    <default>
+                      <RootLayout>
+                        <html lang="zh-CN">
+                          <body
+-                           ai-translate-version="3.0.3"
+-                           ai-translate-id="dkmejdpchbkcihdlengmhifgnigdjmba"
+-                           ai-translate-oem="lenovo"
+                          >
+
+[2m10:30:54[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mIn HTML, <button> cannot be a descendant of <button>.
+This will cause a hydration error.
+
+  ...
+    <Children>
+      <RedirectBoundary>
+        <RedirectErrorBoundary>
+          <LayoutSegmentProvider segmentMap={{children:[...]}}>
+            <Slot id="page:/">
+              <AwaitAppRenderDependencies>
+                <Home>
+                  <ArchiveHomePage>
+                    <main ref={{current:null}} className="_viewport_...">
+                      <div className="_scene_y6y..." style={{width:1920, ...}}>
+                        <ArchiveHeader>
+                        <section>
+                        <div>
+                        <div>
+                        <ArchiveFolders>
+                          <PersonalOriginFolder>
+                          <ArchiveFolder>
+                          <ArchiveFolder folder={{id:"graduate", ...}} layout={{x:650,y:430,width:225, ...}} ...>
+                            <article className={"_folderP..."} style={{...}}>
+                              <span>
+>                             <button
+>                               className="_folderButton_10ea0_2"
+>                               type="button"
+>                               tabIndex={0}
+>                               aria-label="打开硕士档案"
+>                               aria-expanded={false}
+>                               onClick={function onToggle}
+>                             >
+                                <span>
+                                <ArchiveFolderContent folder={{id:"graduate", ...}}>
+                                  <div className="_folderCon...">
+                                    <header>
+                                    <dl>
+                                    <StudentCard card={{enabled:true, ...}}>
+>                                     <button
+>                                       className={"_studentCard_10ea0_6 "}
+>                                       type="button"
+>                                       aria-label="查看学生证背面"
+>                                       aria-pressed={false}
+>                                       onClick={function onClick}
+>                                     >
+                                ...
+                        ...
+                      ...
+
+[2m10:30:54[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m<button> cannot contain a nested <button>.
+See this log for the ancestor stack trace.

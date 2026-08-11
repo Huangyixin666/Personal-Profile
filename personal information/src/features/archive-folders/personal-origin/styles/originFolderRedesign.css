@@ -1,0 +1,10 @@
+.originFolderRoot{width:var(--folder-width)!important}
+.originFolderStage{left:0!important;top:-210px!important;width:380px!important;height:535px!important}
+.originFolderOpenBack,.originFolderFrontMask,.originFolderClosed{position:absolute;left:0;bottom:0;width:var(--folder-width);height:auto;display:block;pointer-events:none;filter:drop-shadow(9px 15px 14px #000a)}
+.originFolderOpenBack{z-index:10;opacity:0}.originFolderFrontMask{z-index:30;opacity:0}.originFolderOpenBack,.originFolderFrontMask{transition:opacity .18s ease}.originFolderExpanded .originFolderOpenBack,.originFolderExpanded .originFolderFrontMask{opacity:1}.originFolderClosed{z-index:40;opacity:1;transition:opacity .18s ease}.originFolderClosedHidden{opacity:0}
+.originFolderPreview{z-index:20!important;pointer-events:none!important}
+.originPreviewPhoto{left:51px!important;top:215px!important;padding:5px!important;opacity:.86!important;transform:translate(0,72px) rotate(0deg) scale(.88)!important;transform-origin:center bottom!important;pointer-events:none!important;transition-duration:520ms!important;transition-timing-function:cubic-bezier(.22,1,.36,1)!important}
+.originPreviewPhoto[class*="previewVisible"]{opacity:1!important;transform:translate(var(--preview-x),var(--preview-y)) rotate(var(--preview-rotation)) scale(1)!important}
+.originPreviewPhoto img{aspect-ratio:3/4!important;object-fit:cover!important}
+.originFolderClickTarget{position:absolute;z-index:45;left:0;bottom:0;width:var(--folder-width);height:420px;padding:0;border:0;background:transparent;cursor:pointer}
+.originFolderClickTarget:focus-visible{outline:2px solid #d19a64;outline-offset:6px}

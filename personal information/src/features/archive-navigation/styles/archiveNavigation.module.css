@@ -1,0 +1,4 @@
+.header { position:absolute; z-index:60; left:26px; right:26px; top:27px; display:flex; justify-content:space-between; color:#c1a77b; font:10px monospace; letter-spacing:.18em; }
+.header i { display:inline-block; width:7px; height:7px; margin-right:10px; border-radius:50%; background:#a63a2a; box-shadow:0 0 8px #a63a2a; }
+.footer { position:absolute; z-index:60; left:36px; right:36px; bottom:20px; display:flex; justify-content:space-around; padding-top:13px; border-top:1px solid #8b714833; color:#b49a71; font:10px monospace; letter-spacing:.16em; }
+.footer span { display:flex; align-items:center; gap:14px; min-width:180px; }.footer b { font-weight:400; }.footer i { display:inline-block; width:30px; height:1px; background:#7e6848; }

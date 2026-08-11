@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="660">
+<path style="fill:none;stroke:#000;stroke-width:40;stroke-linecap:round" d="M70 460V225C70 205,110 185 130 185C149 185,190 205 190 225V560C190 600,137.5 640 105 640C72.5 640,20 600 20 560V80C20 50,85 20 130 20C175 20,240 50 240 80V460"/>
+</svg>

@@ -1,0 +1,40 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: rgba(7, 6, 4, 0.82);
+  backdrop-filter: blur(5px);
+}
+.dialog {
+  position: relative;
+  width: min(760px, 86vw);
+  max-height: 82vh;
+  overflow: auto;
+  color: #241b12;
+  background: #d8c8a5;
+  border: 1px solid #7c6643;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.66);
+}
+.close {
+  position: sticky;
+  z-index: 4;
+  float: right;
+  top: 14px;
+  margin: 14px 14px 0 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #6d5737;
+  color: #382719;
+  background: #c5af83;
+  cursor: pointer;
+  font: 24px/1 Georgia, serif;
+}
+.close:focus-visible { outline: 2px solid #7d261c; outline-offset: 2px; }
+@media (prefers-reduced-motion: no-preference) {
+  .backdrop { animation: fade-in 180ms ease-out; }
+  .dialog { animation: rise-in 240ms ease-out; }
+}
+@keyframes fade-in { from { opacity: 0; } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(14px) scale(.985); } }

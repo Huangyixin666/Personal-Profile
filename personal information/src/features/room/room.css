@@ -1,0 +1,140 @@
+.room-page{position:relative;width:100%;height:100%;overflow:hidden;background:#030303;color:#eee;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+.room-canvas{position:absolute!important;inset:0}
+.computer-modal{position:absolute;z-index:10;inset:0;display:grid;place-items:center;padding:22px;background:rgba(0,0,0,.82);backdrop-filter:blur(7px);animation:fade .24s ease}
+.computer-window{position:relative;width:min(1120px,94vw);filter:drop-shadow(0 28px 70px rgba(0,0,0,.72));animation:computer-in .28s cubic-bezier(.2,.8,.2,1)}
+.computer-window img{display:block;width:100%;height:auto;user-select:none}
+.paper-link{position:absolute;top:35.2%;width:15.5%;height:16.5%;border-radius:9px;cursor:pointer;transition:background .18s ease,transform .18s ease,box-shadow .18s ease}
+.paper-link:hover,.paper-link:focus-visible{background:rgba(255,255,255,.13);box-shadow:0 0 28px rgba(255,244,145,.34);transform:translateY(-3px);outline:1px solid rgba(255,255,255,.32)}
+.paper-link span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.paper-link--left{left:24.2%}.paper-link--middle{left:43.4%}.paper-link--right{left:62.6%}
+.computer-close{position:absolute;top:2.5%;right:2.7%;display:grid;place-items:center;width:38px;height:38px;border:1px solid rgba(25,25,25,.18);border-radius:50%;background:rgba(255,255,255,.72);color:#333;font:26px/1 Arial,sans-serif;cursor:pointer;transition:transform .18s ease,background .18s ease}
+.computer-close:hover{transform:scale(1.06);background:#fff}
+.room-back{position:absolute;z-index:6;left:28px;top:26px;padding:10px 14px;color:rgba(255,245,226,.78);border:1px solid rgba(230,193,140,.35);background:rgba(7,5,4,.58);text-decoration:none;font-size:12px;letter-spacing:.12em;backdrop-filter:blur(4px)}
+@keyframes fade{from{opacity:0}to{opacity:1}}@keyframes computer-in{from{opacity:0;transform:scale(.94) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@media(max-width:700px){.computer-modal{padding:8px}.computer-window{width:100vw}.computer-close{width:30px;height:30px;font-size:21px}.room-back{left:18px;top:18px}}
+
+.room-page .computer-window {
+  width: min(1120px, 94vw, 123vh);
+}
+
+.room-page--model {
+  background: #000;
+}
+
+.room-guidance {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 34px;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,.64);
+  font-size: 13px;
+  letter-spacing: .12em;
+  white-space: nowrap;
+  animation: guidance-in .8s ease both;
+}
+
+.room-guidance--lit {
+  color: rgba(255,245,226,.82);
+}
+
+.room-switch {
+  position: absolute;
+  z-index: 5;
+  right: 6.5vw;
+  top: 48%;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  color: rgba(255,255,255,.35);
+  cursor: pointer;
+}
+
+.room-switch__plate {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 58px;
+  border: 1px solid #262626;
+  border-radius: 4px;
+  background: #090909;
+  box-shadow: 0 0 18px rgba(160,25,14,.12);
+}
+
+.room-switch__plate i {
+  display: block;
+  width: 12px;
+  height: 22px;
+  border-radius: 2px;
+  background: #151515;
+  box-shadow: inset 0 -2px 0 #380b08, 0 5px 14px rgba(186,27,15,.28);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.room-switch:hover .room-switch__plate i,
+.room-switch:focus-visible .room-switch__plate i {
+  transform: translateY(-2px);
+  box-shadow: inset 0 -2px 0 #8e2018, 0 0 22px rgba(222,52,36,.58);
+}
+
+.room-switch small {
+  font-size: 8px;
+  letter-spacing: .2em;
+}
+
+@keyframes guidance-in {
+  from { opacity: 0; transform: translate(-50%, 8px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.room-loading {
+  position: absolute;
+  z-index: 8;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #000;
+  color: #f0ece4;
+}
+
+.room-loading__content {
+  width: min(340px, calc(100vw - 52px));
+  text-align: center;
+}
+
+.room-loading__content small {
+  display: block;
+  margin-bottom: 16px;
+  color: #aeb4ba;
+  font-size: 10px;
+  letter-spacing: .24em;
+}
+
+.room-loading__content strong {
+  display: block;
+  margin-bottom: 18px;
+  font: 400 40px/1 Georgia, serif;
+}
+
+.room-loading__track {
+  height: 2px;
+  overflow: hidden;
+  background: rgba(255,255,255,.14);
+}
+
+.room-loading__track span {
+  display: block;
+  height: 100%;
+  background: #e6c18c;
+  transition: width .2s ease;
+}
+
+.room-loading__content p {
+  margin: 10px 0 0;
+  color: #899097;
+  font-size: 10px;
+  letter-spacing: .08em;
+}
