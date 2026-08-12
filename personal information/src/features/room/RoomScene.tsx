@@ -45,7 +45,7 @@ export function RoomScene({ onComputerClick, lightsOn }: { onComputerClick: () =
 
   return <group>
     <hemisphereLight args={['#eef4ff', '#463a34', lightsOn ? 2.35 : 0]} />
-    <directionalLight castShadow position={[7, 14, 9]} intensity={lightsOn ? 3.6 : 0} color="#fff0d2" shadow-mapSize={[2048, 2048]} />
+    <directionalLight castShadow position={[7, 14, 9]} intensity={lightsOn ? 3.6 : 0} color="#fff0d2" shadow-mapSize={[1024, 1024]} />
     <spotLight castShadow position={[0, 8.3, .2]} target-position={[0, 3.7, 0]} angle={.62} penumbra={.72} intensity={lightsOn ? 75 : 0} distance={18} color="#ffd99b" />
     <pointLight position={[0, 8.18, .16]} intensity={lightsOn ? 22 : 0} distance={6} color="#ffca77" />
     <primitive

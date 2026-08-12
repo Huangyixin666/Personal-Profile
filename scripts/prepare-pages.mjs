@@ -25,6 +25,10 @@ for (const file of pages) {
     .replaceAll("http://127.0.0.1:4174/room", "./room/")
     .replaceAll("./personal-archive-new.html", "/Personal-Profile/")
     .replaceAll('href="./"', 'href="/Personal-Profile/"');
+  html = html.replace(
+    /<a class="back" href="\/Personal-Profile\/">/g,
+    '<a class="back" href="/Personal-Profile/" onclick="if(document.referrer.includes(\'/Personal-Profile/\')){event.preventDefault();history.back()}">',
+  );
   const target = file === "personal-archive-new.html" ? "index.html" : basename(file);
   await writeFile(join(outputDir, target), html, "utf8");
 }

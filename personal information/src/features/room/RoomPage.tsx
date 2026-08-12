@@ -31,13 +31,13 @@ export function RoomPage() {
   const [computerOpen, setComputerOpen] = useState(false)
   const [lightsOn, setLightsOn] = useState(false)
   return <main className="room-page room-page--model">
-    <Canvas className="room-canvas" shadows dpr={[1, 1.6]} camera={{ position: CAMERA.position, fov: CAMERA.fov, near: .1, far: 100 }} gl={{ antialias: true }}>
+    <Canvas className="room-canvas" shadows dpr={[0.85, 1.25]} camera={{ position: CAMERA.position, fov: CAMERA.fov, near: .1, far: 100 }} gl={{ antialias: true, powerPreference: 'high-performance' }}>
       <color attach="background" args={['#000000']} />
       <fog attach="fog" args={['#000000', 28, 44]} />
       <Suspense fallback={null}><RoomScene lightsOn={lightsOn} onComputerClick={() => setComputerOpen(true)} /><CameraController /></Suspense>
     </Canvas>
     <RoomLoading />
-    <a className="room-back" href="/Personal-Profile/" aria-label="返回档案馆">← 返回档案馆</a>
+    <a className="room-back" href="/Personal-Profile/" aria-label="返回档案馆" onClick={(event) => { if (document.referrer.includes('/Personal-Profile/')) { event.preventDefault(); history.back() } }}>← 返回档案馆</a>
     <div className={`room-guidance ${lightsOn ? 'room-guidance--lit' : ''}`}>{lightsOn ? '点击电脑屏幕，打开我的论文档案。' : '房间还没亮，试着找到灯的开关。'}</div>
     {!lightsOn && <button className="room-switch" type="button" aria-label="打开房间灯光" onClick={() => setLightsOn(true)}><span className="room-switch__plate"><i /></span><small>SWITCH</small></button>}
     {computerOpen && <div className="computer-modal" role="dialog" aria-modal="true" aria-label="Research computer" onClick={() => setComputerOpen(false)}>
