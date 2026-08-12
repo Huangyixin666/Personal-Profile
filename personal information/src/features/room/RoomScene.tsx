@@ -1,14 +1,12 @@
-import { ThreeEvent, useLoader } from '@react-three/fiber'
+import { ThreeEvent } from '@react-three/fiber'
+import { useGLTF } from '@react-three/drei'
 import { useEffect, useMemo } from 'react'
-import { Box3, Group, Mesh, MeshPhongMaterial, Vector3 } from 'three'
-import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js'
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js'
+import { Box3, Group, Mesh, MeshStandardMaterial, Vector3 } from 'three'
 
 const MODEL_SCALE = 0.003
 
 export function RoomScene({ onComputerClick, lightsOn }: { onComputerClick: () => void; lightsOn: boolean }) {
-  const materials = useLoader(MTLLoader, '/Personal-Profile/assets/room-optimized/room.mtl')
-  const loaded = useLoader(OBJLoader, '/Personal-Profile/assets/room-optimized/room.obj', (loader) => loader.setMaterials(materials))
+  const { scene: loaded } = useGLTF('/Personal-Profile/assets/room-optimized/room.glb')
 
   const model = useMemo(() => {
     const clone = loaded.clone(true) as Group
@@ -23,8 +21,8 @@ export function RoomScene({ onComputerClick, lightsOn }: { onComputerClick: () =
       child.receiveShadow = true
       const meshMaterials = Array.isArray(child.material) ? child.material : [child.material]
       meshMaterials.forEach((material) => {
-        if (material instanceof MeshPhongMaterial) {
-          material.shininess = Math.min(material.shininess, 24)
+        if (material instanceof MeshStandardMaterial) {
+          material.roughness = Math.max(material.roughness, 0.72)
           if (material.name === 'computer') {
             material.emissive.set('#153b66')
             material.emissiveIntensity = lightsOn ? 0.22 : 0

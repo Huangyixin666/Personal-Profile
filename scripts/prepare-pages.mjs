@@ -1,4 +1,4 @@
-import { cp, mkdir, readFile, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { basename, join } from "node:path";
 
 const root = process.cwd();
@@ -12,10 +12,14 @@ const pages = [
 ];
 
 await mkdir(outputDir, { recursive: true });
+await rm(join(outputDir, "personal information", "src", "assets"), { recursive: true, force: true });
 await cp(
   join(root, "personal information", "src", "assets"),
   join(outputDir, "personal information", "src", "assets"),
-  { recursive: true },
+  {
+    recursive: true,
+    filter: (source) => !/\.(obj|mtl)$/i.test(source),
+  },
 );
 
 for (const file of pages) {

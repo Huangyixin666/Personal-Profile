@@ -31,7 +31,7 @@ export function RoomPage() {
   const [computerOpen, setComputerOpen] = useState(false)
   const [lightsOn, setLightsOn] = useState(false)
   return <main className="room-page room-page--model">
-    <Canvas className="room-canvas" shadows dpr={[0.85, 1.25]} camera={{ position: CAMERA.position, fov: CAMERA.fov, near: .1, far: 100 }} gl={{ antialias: true, powerPreference: 'high-performance' }}>
+    <Canvas className="room-canvas" shadows dpr={[0.7, 1]} camera={{ position: CAMERA.position, fov: CAMERA.fov, near: .1, far: 100 }} gl={{ antialias: false, powerPreference: 'high-performance' }}>
       <color attach="background" args={['#000000']} />
       <fog attach="fog" args={['#000000', 28, 44]} />
       <Suspense fallback={null}><RoomScene lightsOn={lightsOn} onComputerClick={() => setComputerOpen(true)} /><CameraController /></Suspense>
