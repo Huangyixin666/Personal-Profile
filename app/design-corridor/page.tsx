@@ -5,5 +5,5 @@ import { DesignCorridor } from "../../personal information/src/features/design-c
 
 export default function DesignCorridorPage(){
   const router=useRouter();
-  return <DesignCorridor open onClose={()=>router.push("/")}/>;
+  return <DesignCorridor open onClose={()=>router.push("/Personal-Profile/")}/>;
 }

@@ -23,7 +23,8 @@ for (const file of pages) {
   html = html
     .replaceAll("../personal%20information/", "./personal%20information/")
     .replaceAll("http://127.0.0.1:4174/room", "./room/")
-    .replaceAll("./personal-archive-new.html", "./");
+    .replaceAll("./personal-archive-new.html", "/Personal-Profile/")
+    .replaceAll('href="./"', 'href="/Personal-Profile/"');
   const target = file === "personal-archive-new.html" ? "index.html" : basename(file);
   await writeFile(join(outputDir, target), html, "utf8");
 }
