@@ -62,9 +62,9 @@ for (const file of pages) {
     '<a class="back" href="/Personal-Profile/" onclick="if(document.referrer.includes(\'/Personal-Profile/\')){event.preventDefault();history.back()}">',
   );
   if (file === "personal-archive-new.html") {
-    html = html.replace("</body>", soundSystem("serenade-e-flat-major.mp3", "降E大调小夜曲", ".folderWrap,.secondaryProto,.originProto,.wall [role=link]", "button,[role=link],a") + "</body>");
+    html = html.replace("</body>", soundSystem("serenade-e-flat-major.ogg", "降E大调夜曲", ".folderWrap,.secondaryProto,.originProto,.wall [role=link]", "button,[role=link],a") + "</body>");
   } else if (file === "design-corridor.html") {
-    html = html.replace("</body>", soundSystem("debussy-clair-de-lune.mp3", "德彪西《月光》", ".introCard,.artHotspot", "button,a") + "</body>");
+    html = html.replace("</body>", soundSystem("debussy-clair-de-lune.ogg", "德彪西《月光》", ".introCard,.artHotspot", "button,a") + "</body>");
   } else if (file === "internship-room.html") {
     html = html.replace("</body>", soundSystem("", "", ".choice", "button,a") + "</body>");
   }
