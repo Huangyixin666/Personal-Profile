@@ -8,6 +8,17 @@ import { RoomScene } from './RoomScene'
 import { CAMERA } from './roomItems'
 import './room.css'
 
+function playRoomClick(kind: 'soft' | 'switch' = 'soft') {
+  const AudioContextClass = window.AudioContext || (window as typeof window & { webkitAudioContext: typeof AudioContext }).webkitAudioContext
+  const context = new AudioContextClass(), oscillator = context.createOscillator(), gain = context.createGain()
+  oscillator.type = kind === 'switch' ? 'square' : 'sine'
+  oscillator.frequency.setValueAtTime(kind === 'switch' ? 150 : 410, context.currentTime)
+  oscillator.frequency.exponentialRampToValueAtTime(kind === 'switch' ? 75 : 205, context.currentTime + .07)
+  gain.gain.setValueAtTime(kind === 'switch' ? .05 : .025, context.currentTime)
+  gain.gain.exponentialRampToValueAtTime(.0001, context.currentTime + .09)
+  oscillator.connect(gain); gain.connect(context.destination); oscillator.start(); oscillator.stop(context.currentTime + .1)
+}
+
 const papers = [
   { label: 'Blue-green space paper', href: 'https://doi.org/10.1016/j.cities.2026.106824', className: 'paper-link paper-link--left' },
   { label: 'New Energy Papers', href: 'https://doi.org/10.1016/j.eiar.2025.108137', className: 'paper-link paper-link--middle' },
@@ -34,17 +45,17 @@ export function RoomPage() {
     <Canvas className="room-canvas" shadows dpr={[0.7, 1]} camera={{ position: CAMERA.position, fov: CAMERA.fov, near: .1, far: 100 }} gl={{ antialias: false, powerPreference: 'high-performance' }}>
       <color attach="background" args={['#000000']} />
       <fog attach="fog" args={['#000000', 28, 44]} />
-      <Suspense fallback={null}><RoomScene lightsOn={lightsOn} onComputerClick={() => setComputerOpen(true)} /><CameraController /></Suspense>
+      <Suspense fallback={null}><RoomScene lightsOn={lightsOn} onComputerClick={() => { playRoomClick(); setComputerOpen(true) }} /><CameraController /></Suspense>
     </Canvas>
     <RoomLoading />
     <a className="room-back" href="/Personal-Profile/" aria-label="返回档案馆" onClick={(event) => { if (document.referrer.includes('/Personal-Profile/')) { event.preventDefault(); history.back() } }}>← 返回档案馆</a>
     <div className={`room-guidance ${lightsOn ? 'room-guidance--lit' : ''}`}>{lightsOn ? '点击电脑屏幕，打开我的论文档案。' : '房间还没亮，试着找到灯的开关。'}</div>
-    {!lightsOn && <button className="room-switch" type="button" aria-label="打开房间灯光" onClick={() => setLightsOn(true)}><span className="room-switch__plate"><i /></span><small>SWITCH</small></button>}
+    {!lightsOn && <button className="room-switch" type="button" aria-label="打开房间灯光" onClick={() => { playRoomClick('switch'); setLightsOn(true) }}><span className="room-switch__plate"><i /></span><small>SWITCH</small></button>}
     {computerOpen && <div className="computer-modal" role="dialog" aria-modal="true" aria-label="Research computer" onClick={() => setComputerOpen(false)}>
       <div className="computer-window" onClick={(event) => event.stopPropagation()}>
         <img src="/Personal-Profile/assets/room-optimized/old-computer.webp" alt="Old computer showing three research folders" />
-        {papers.map((paper) => <a key={paper.href} className={paper.className} href={paper.href} target="_blank" rel="noreferrer" aria-label={`Open ${paper.label}`}><span>{paper.label}</span></a>)}
-        <button className="computer-close" type="button" aria-label="Close computer" onClick={() => setComputerOpen(false)}>×</button>
+        {papers.map((paper) => <a key={paper.href} className={paper.className} href={paper.href} target="_blank" rel="noreferrer" aria-label={`Open ${paper.label}`} onClick={() => playRoomClick()}><span>{paper.label}</span></a>)}
+        <button className="computer-close" type="button" aria-label="Close computer" onClick={() => { playRoomClick(); setComputerOpen(false) }}>×</button>
       </div>
     </div>}
   </main>
