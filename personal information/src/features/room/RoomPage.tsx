@@ -37,12 +37,12 @@ export function RoomPage() {
       <Suspense fallback={null}><RoomScene lightsOn={lightsOn} onComputerClick={() => setComputerOpen(true)} /><CameraController /></Suspense>
     </Canvas>
     <RoomLoading />
-    <a className="room-back" href="/" aria-label="返回档案馆">← 返回档案馆</a>
+    <a className="room-back" href="/Personal-Profile/" aria-label="返回档案馆">← 返回档案馆</a>
     <div className={`room-guidance ${lightsOn ? 'room-guidance--lit' : ''}`}>{lightsOn ? '点击电脑屏幕，打开我的论文档案。' : '房间还没亮，试着找到灯的开关。'}</div>
     {!lightsOn && <button className="room-switch" type="button" aria-label="打开房间灯光" onClick={() => setLightsOn(true)}><span className="room-switch__plate"><i /></span><small>SWITCH</small></button>}
     {computerOpen && <div className="computer-modal" role="dialog" aria-modal="true" aria-label="Research computer" onClick={() => setComputerOpen(false)}>
       <div className="computer-window" onClick={(event) => event.stopPropagation()}>
-        <img src="/assets/room-optimized/old-computer.webp" alt="Old computer showing three research folders" />
+        <img src="/Personal-Profile/assets/room-optimized/old-computer.webp" alt="Old computer showing three research folders" />
         {papers.map((paper) => <a key={paper.href} className={paper.className} href={paper.href} target="_blank" rel="noreferrer" aria-label={`Open ${paper.label}`}><span>{paper.label}</span></a>)}
         <button className="computer-close" type="button" aria-label="Close computer" onClick={() => setComputerOpen(false)}>×</button>
       </div>

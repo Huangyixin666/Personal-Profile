@@ -7,8 +7,8 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js'
 const MODEL_SCALE = 0.003
 
 export function RoomScene({ onComputerClick, lightsOn }: { onComputerClick: () => void; lightsOn: boolean }) {
-  const materials = useLoader(MTLLoader, '/assets/room-optimized/room.mtl')
-  const loaded = useLoader(OBJLoader, '/assets/room-optimized/room.obj', (loader) => loader.setMaterials(materials))
+  const materials = useLoader(MTLLoader, '/Personal-Profile/assets/room-optimized/room.mtl')
+  const loaded = useLoader(OBJLoader, '/Personal-Profile/assets/room-optimized/room.obj', (loader) => loader.setMaterials(materials))
 
   const model = useMemo(() => {
     const clone = loaded.clone(true) as Group

@@ -22,7 +22,8 @@ for (const file of pages) {
   let html = await readFile(join(sourceDir, file), "utf8");
   html = html
     .replaceAll("../personal%20information/", "./personal%20information/")
-    .replaceAll("http://127.0.0.1:4174/room", "./room/");
+    .replaceAll("http://127.0.0.1:4174/room", "./room/")
+    .replaceAll("./personal-archive-new.html", "./");
   const target = file === "personal-archive-new.html" ? "index.html" : basename(file);
   await writeFile(join(outputDir, target), html, "utf8");
 }
