@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>复古研究室</title>
+  <link rel="stylesheet" href="../app/research-room/research-room.module.css">
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#030303}.modal[hidden]{display:none}.desktop img{pointer-events:none}</style>
+</head>
+<body>
+<main class="room" id="room">
+  <a class="back" href="./personal-archive-new.html">← 返回档案馆</a><div class="haze"></div>
+  <section class="scene" id="scene" aria-label="复古研究室">
+    <div class="lampGlow"></div><div class="floorShadow"></div>
+    <div class="chair"><div class="chairBack"></div><div class="chairSeat"></div><i></i><i></i></div>
+    <div class="desk"><div class="deskTop"></div><div class="drawer left"><b></b><b></b><b></b></div><div class="drawer right"><b></b><b></b><b></b></div><div class="kneePanel"></div></div>
+    <div class="lamp"><div class="shade"></div><div class="bulb"></div><div class="arm"></div><div class="lampBase"></div></div>
+    <div class="stationery"><div class="paperStack"><i></i><i></i><i></i></div><div class="pencilCup"><i></i><i></i><i></i></div><div class="notebook"></div><div class="pen"></div></div>
+    <div class="computerWrap"><button class="computerButton" id="openComputer" aria-label="放大电脑屏幕"><div class="crt"><div class="crtTop"></div><div class="crtBezel"><div class="desktop"><img src="../public/research-room/computer.png" alt="Windows经典桌面"></div></div><div class="crtControls"><i></i><i></i><span></span></div><div class="crtNeck"></div><div class="crtBase"></div></div></button></div>
+    <div class="fan"><div class="fanCage"><div class="blades"><i></i><i></i><i></i><i></i></div><b></b></div><div class="fanStem"></div><div class="fanBase"></div></div>
+    <p class="hint">点击电脑 · 查看研究档案</p>
+  </section>
+  <div class="modal" id="computerModal" role="dialog" aria-modal="true" hidden>
+    <button class="close" id="closeComputer" aria-label="关闭">×</button>
+    <div class="modalComputer"><div class="crt crtLarge"><div class="crtTop"></div><div class="crtBezel"><div class="desktop"><img src="../public/research-room/computer.png" alt="Windows经典桌面"><div class="folderLinks"><a class="folderLink" style="left:18.7%" href="https://doi.org/10.1016/j.cities.2026.106824" target="_blank" aria-label="打开蓝绿空间论文"></a><a class="folderLink" style="left:42%" href="https://doi.org/10.1016/j.eiar.2025.108137" target="_blank" aria-label="打开新能源论文"></a><a class="folderLink" style="left:65.3%" href="https://doi.org/10.1016/j.ijdrr.2025.105256" target="_blank" aria-label="打开灾害研究论文"></a></div></div></div><div class="crtControls"><i></i><i></i><span></span></div><div class="crtNeck"></div><div class="crtBase"></div></div></div>
+    <p class="modalHint">点击桌面中的三个文件夹打开论文</p>
+  </div>
+</main>
+<script>
+const room=document.getElementById('room'),scene=document.getElementById('scene'),modal=document.getElementById('computerModal');
+room.addEventListener('pointermove',e=>{if(!modal.hidden)return;scene.style.setProperty('--ry',((e.clientX/innerWidth-.5)*6)+'deg');scene.style.setProperty('--rx',(-(e.clientY/innerHeight-.5)*4)+'deg')});
+room.addEventListener('pointerleave',()=>{scene.style.setProperty('--ry','0deg');scene.style.setProperty('--rx','0deg')});
+document.getElementById('openComputer').onclick=()=>modal.hidden=false;document.getElementById('closeComputer').onclick=()=>modal.hidden=true;
+modal.addEventListener('mousedown',e=>{if(e.target===modal)modal.hidden=true});addEventListener('keydown',e=>{if(e.key==='Escape')modal.hidden=true});
+</script>
+</body></html>

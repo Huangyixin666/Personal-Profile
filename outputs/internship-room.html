@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>实习经历与项目实践</title>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050403;color:#ddc58f;font-family:"Noto Serif SC","Songti SC",serif}
+    button,input{font:inherit}.room{position:fixed;inset:0;isolation:isolate;background:#050403}
+    .archiveBg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62) saturate(.82)}
+    .shade{position:absolute;inset:0;background:rgba(0,0,0,.66);backdrop-filter:blur(1px)}
+    .back{position:fixed;z-index:30;left:28px;top:25px;padding:12px 18px;border:1px solid #8b6b36;background:#130f0bd9;color:#ddc58f;text-decoration:none;letter-spacing:.12em}
+    .view{position:absolute;z-index:5;inset:0;display:none}.view.active{display:flex}.chooser{align-items:center;justify-content:center;gap:48px;padding:90px}
+    .choice{position:relative;width:min(29vw,430px);padding:0;border:0;background:transparent;box-shadow:0 20px 45px #000;cursor:pointer;transition:.25s}
+    .choice img{display:block;width:100%;height:auto}.choice:hover,.choice:focus-visible{transform:translateY(-9px);filter:brightness(1.12);box-shadow:0 0 24px #d3a75377,0 25px 55px #000}
+    .passwordView{align-items:center;justify-content:center}.passwordCard{width:min(90vw,620px);padding:48px 60px 42px;text-align:center;border:1px solid #87672f;background:linear-gradient(145deg,#21170ee8,#0d0907f2);box-shadow:0 28px 70px #000}
+    .passwordCard h1{margin:0 0 15px;font-size:30px;letter-spacing:.18em}.passwordCard p{margin:8px 0 28px;color:#bda875;line-height:1.8}.phone{display:flex;align-items:end;justify-content:center;gap:14px;font:28px Georgia,serif;letter-spacing:.1em}.digitGroup{display:flex;gap:10px}.digit{width:30px;padding:3px 2px 7px;color:#f2dda8;text-align:center;border:0;border-bottom:2px solid #a78343;outline:0;background:transparent;font:27px Georgia,serif}.digit:focus{border-color:#f0c46e;filter:drop-shadow(0 0 7px #e7b65a)}
+    .submit{margin-top:30px;padding:10px 38px;color:#ddc58f;border:1px solid #8b6b36;background:#171009;cursor:pointer}.error{height:24px;margin-top:18px!important;color:#bd5043!important}.interView{overflow-y:auto;align-items:flex-start;justify-content:center;padding:72px 24px 46px}.interView img{display:block;width:min(92vw,1180px);height:auto;box-shadow:0 25px 70px #000}
+    .friendView{flex-direction:column;justify-content:center;padding:72px 0 42px}.track{display:flex;align-items:center;gap:24px;width:100%;overflow-x:auto;overflow-y:hidden;padding:38px 8vw 30px;scroll-behavior:smooth;scrollbar-color:#96733d #171009;scrollbar-width:thin}.drawing{flex:0 0 auto;height:min(61vh,570px);width:auto;max-width:none;object-fit:contain;border:8px solid #d7c59e;box-shadow:10px 15px 28px #000;filter:brightness(.78) saturate(.82);transition:.22s}.drawing:hover{filter:none;transform:translateY(-7px)}
+    .friendNote{margin:12px 30px 0;text-align:center;font-size:18px;letter-spacing:.08em;color:#d6bd84}.closeView{position:fixed;z-index:31;right:30px;top:25px;width:58px;height:58px;border:1px solid #96774a;background:#17120dee;color:#dbc393;font:34px Georgia;cursor:pointer;display:none}.closeView.show{display:block}
+    @media(max-width:760px){.chooser{gap:24px;padding:80px 20px;flex-direction:column}.choice{width:min(78vw,420px)}.passwordCard{padding:38px 22px}.drawing{height:55vh}}
+  </style>
+</head>
+<body>
+  <main class="room">
+    <img class="archiveBg" src="../personal%20information/src/assets/lighting/archive-background-lit.png" alt="">
+    <div class="shade"></div>
+    <a class="back" href="./personal-archive-new.html">← 返回档案馆</a>
+    <button class="closeView" type="button" aria-label="返回选择">×</button>
+
+    <section class="view chooser active" data-view="chooser">
+      <button class="choice" type="button" data-open="password" aria-label="贵客入口"><img src="../personal%20information/src/assets/archive/internship/guike-button.png" alt="贵客"></button>
+      <button class="choice" type="button" data-open="friend" aria-label="朋友入口"><img src="../personal%20information/src/assets/archive/internship/friend-button.png" alt="朋友"></button>
+    </section>
+
+    <section class="view passwordView" data-view="password">
+      <form class="passwordCard">
+        <h1>贵客，请留步</h1>
+        <p>请输入房间主人中间四位手机号<br>提示：可以看简历</p>
+        <div class="phone"><span>137</span><div class="digitGroup" aria-label="中间四位手机号"><input class="digit" inputmode="numeric" maxlength="1" aria-label="第1位"><input class="digit" inputmode="numeric" maxlength="1" aria-label="第2位"><input class="digit" inputmode="numeric" maxlength="1" aria-label="第3位"><input class="digit" inputmode="numeric" maxlength="1" aria-label="第4位"></div><span>8877</span></div>
+        <button class="submit" type="submit">验证身份</button>
+        <p class="error" role="alert"></p>
+      </form>
+    </section>
+
+    <section class="view interView" data-view="inter">
+      <img src="../personal%20information/src/assets/archive/internship/inter.png" alt="实习经历完整档案">
+    </section>
+
+    <section class="view friendView" data-view="friend">
+      <div class="track" aria-label="随笔作画横向画廊"></div>
+      <p class="friendNote">虽然看不了实习经历，但可以评鉴我的随笔作画</p>
+    </section>
+  </main>
+  <script>
+    const views=[...document.querySelectorAll('[data-view]')],closeButton=document.querySelector('.closeView');
+    function show(name){views.forEach(v=>v.classList.toggle('active',v.dataset.view===name));closeButton.classList.toggle('show',name!=='chooser');if(name==='password')setTimeout(()=>digits[0].focus(),30)}
+    document.querySelectorAll('[data-open]').forEach(button=>button.onclick=()=>show(button.dataset.open));
+    closeButton.onclick=()=>show('chooser');
+    const form=document.querySelector('.passwordCard'),digits=[...form.querySelectorAll('.digit')],error=form.querySelector('.error');
+    digits.forEach((field,index)=>{field.addEventListener('input',()=>{field.value=field.value.replace(/\D/g,'').slice(-1);error.textContent='';if(field.value&&index<digits.length-1)digits[index+1].focus()});field.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!field.value&&index>0){digits[index-1].focus();digits[index-1].select()}if(e.key==='ArrowLeft'&&index>0)digits[index-1].focus();if(e.key==='ArrowRight'&&index<digits.length-1)digits[index+1].focus()});field.addEventListener('paste',e=>{e.preventDefault();const values=e.clipboardData.getData('text').replace(/\D/g,'').slice(0,4);values.split('').forEach((value,i)=>{if(digits[i])digits[i].value=value});digits[Math.min(values.length,4)-1]?.focus()})});
+    form.onsubmit=e=>{e.preventDefault();const password=digits.map(field=>field.value).join('');if(password==='3667'){error.textContent='';show('inter')}else{error.textContent='密码错误，请重新输入';digits.forEach(field=>field.value='');digits[0].focus()}};
+    const track=document.querySelector('.track'),base='../personal%20information/src/assets/archive/internship/picture/';
+    ['p1.png','p2.png','P3.png','P4.png','P5.png','P6.png','P7.png','P8.png'].forEach((file,index)=>{const img=document.createElement('img');img.className='drawing';img.src=base+file;img.alt='随笔作画 '+(index+1);track.appendChild(img)});
+    addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.querySelector('[data-view="chooser"]').classList.contains('active'))show('chooser')});
+  </script>
+</body>
+</html>
