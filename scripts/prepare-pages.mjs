@@ -28,3 +28,9 @@ for (const file of pages) {
   const target = file === "personal-archive-new.html" ? "index.html" : basename(file);
   await writeFile(join(outputDir, target), html, "utf8");
 }
+
+await writeFile(
+  join(outputDir, "404.html"),
+  `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>返回个人档案</title><script>location.replace("/Personal-Profile/")</script></head><body style="margin:0;background:#050504;color:#c8b18a;display:grid;place-items:center;min-height:100vh;font-family:serif">正在返回个人档案……</body></html>`,
+  "utf8",
+);
