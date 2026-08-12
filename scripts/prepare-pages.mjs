@@ -32,10 +32,13 @@ const hover=${JSON.stringify(hoverSelectors)};const clicks=${JSON.stringify(clic
 document.querySelectorAll(hover).forEach(el=>el.addEventListener('pointerenter',rustle));
 document.querySelectorAll(clicks).forEach(el=>el.addEventListener('click',()=>clickSound(el.matches('.switch,#switchTarget,.submit')?'switch':'soft'),true));
 ${musicFile ? `
-const audio=new Audio('/Personal-Profile/audio/${musicFile}');audio.loop=true;audio.preload='none';audio.volume=.035;
-const button=document.createElement('button');button.className='siteMusic off';button.type='button';button.innerHTML='<i>♪</i><small>${musicLabel} · 音乐关闭</small>';document.body.appendChild(button);
-let wanted=false;async function toggleMusic(){wanted=!wanted;button.classList.toggle('off',!wanted);button.querySelector('small').textContent='${musicLabel} · '+(wanted?'播放中':'音乐关闭');if(wanted){try{audio.volume=.01;await audio.play();let v=.01;const fade=setInterval(()=>{if(!wanted||v>=.055)return clearInterval(fade);v+=.003;audio.volume=Math.min(v,.055)},120)}catch{wanted=false;button.classList.add('off');button.querySelector('small').textContent='${musicLabel} · 请添加音频'}}else audio.pause()}
+const audio=new Audio('/Personal-Profile/audio/${musicFile}');audio.loop=true;audio.preload='auto';audio.volume=.22;
+const button=document.createElement('button');button.className='siteMusic';button.type='button';button.innerHTML='<i>♪</i><small>${musicLabel} · 播放中</small>';document.body.appendChild(button);
+let wanted=true,started=false;
+async function startMusic(){if(!wanted||started)return;try{audio.volume=.08;await audio.play();started=true;let v=.08;const fade=setInterval(()=>{if(!wanted||v>=.22)return clearInterval(fade);v+=.01;audio.volume=Math.min(v,.22)},120)}catch{}}
+async function toggleMusic(){wanted=!wanted;button.classList.toggle('off',!wanted);button.querySelector('small').textContent='${musicLabel} · '+(wanted?'播放中':'音乐关闭');if(wanted){started=false;await startMusic()}else{audio.pause();started=false}}
 button.onclick=toggleMusic;
+startMusic();['pointerdown','keydown','touchstart','wheel'].forEach(type=>addEventListener(type,startMusic,{once:true,passive:true}));
 ` : ''}
 })();</script>`;
 
