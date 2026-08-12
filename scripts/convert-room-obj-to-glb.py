@@ -65,10 +65,19 @@ for m in source_materials:
     gm={"name":m["name"],"pbrMetallicRoughness":{"baseColorFactor":base,"metallicFactor":0.0,"roughnessFactor":0.82},"doubleSided":True}
     if "map" in m:
         uri=m["map"]
+        # The source MTL still names the original JPG files, while the deployed
+        # room uses their much smaller WebP replacements.
+        webp_uri = str(Path(uri).with_suffix(".webp")).replace("\\", "/")
+        if (ROOT / "public/assets/room-optimized" / webp_uri).exists():
+            uri = webp_uri
         images.append({"uri":uri})
-        textures.append({"source":len(images)-1})
+        image_index=len(images)-1
+        if uri.lower().endswith(".webp"):
+            textures.append({"extensions":{"EXT_texture_webp":{"source":image_index}}})
+            webp_used=True
+        else:
+            textures.append({"source":image_index})
         gm["pbrMetallicRoughness"]["baseColorTexture"]={"index":len(textures)-1}
-        if uri.lower().endswith(".webp"): webp_used=True
     if m["d"] < .999:
         gm["alphaMode"]="BLEND"
     gltf_materials.append(gm)
