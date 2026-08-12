@@ -72,11 +72,10 @@ for m in source_materials:
             uri = webp_uri
         images.append({"uri":uri})
         image_index=len(images)-1
-        if uri.lower().endswith(".webp"):
-            textures.append({"extensions":{"EXT_texture_webp":{"source":image_index}}})
-            webp_used=True
-        else:
-            textures.append({"source":image_index})
+        # Three.js can load WebP URIs directly. Keeping a normal `source`
+        # reference also avoids browsers silently ignoring an optional texture
+        # extension and falling back to the material's plain base color.
+        textures.append({"source":image_index})
         gm["pbrMetallicRoughness"]["baseColorTexture"]={"index":len(textures)-1}
     if m["d"] < .999:
         gm["alphaMode"]="BLEND"
@@ -103,7 +102,6 @@ for name, refs in groups.items():
     primitives.append({"attributes":attrs,"indices":ind,"material":mat_index.get(name,mat_index.get("FrontColor",0)),"mode":4})
 
 gltf={"asset":{"version":"2.0","generator":"Codex OBJ-to-GLB optimizer"},"scene":0,"scenes":[{"nodes":[0]}],"nodes":[{"mesh":0,"name":"Research Room"}],"meshes":[{"name":"Room","primitives":primitives}],"buffers":[{"byteLength":len(blob)}],"bufferViews":views,"accessors":accessors,"materials":gltf_materials,"images":images,"textures":textures}
-if webp_used: gltf["extensionsUsed"]=["EXT_texture_webp"]
 js=json.dumps(gltf,separators=(',',':')).encode(); js+=b' ' * ((4-len(js)%4)%4); align()
 total=12+8+len(js)+8+len(blob)
 with OUT.open('wb') as f:
